@@ -22,28 +22,32 @@ function formatPrice(input) {
 // Tvs & Players
 function changeValues(e) {
   let index = 0
-
   const input = document.getElementById(`${e.target.id}`)
+
+  const trId = /([^-]*)-/.exec(e.target.id)[1]
+
+  parentNode = document.querySelector(
+    `#${trId}-${e.target.id.replace(/\D/g, "")}`
+  )
+
   if (input.id.includes("qtd")) {
     index = 2
     input.value = e.target.value
   } else {
-    input.value = parseFloat(e.target.value.replace(",", "").replace(".", ""))
+    input.value = parseFloat(e.target.value.replace(/[,.]+/g, ""))
   }
 
-  const parent = input.parentNode.parentNode.parentNode
+  const value =
+    parentNode.children[index].getElementsByTagName("input")[0].value
 
-  const value = parent.children[index].getElementsByTagName("input")[0].value
-
-  const totalEvent = parent.children[3]
+  const totalEvent = parentNode.children[3]
 
   multiply(totalEvent, input.value, value)
 }
 
 function multiply(event, val1, val2) {
   const total = val1 * val2
-  event.getElementsByTagName("div")[0].getElementsByTagName("input")[0].value =
-    total
+  event.getElementsByTagName("input")[0].value = total
 
   lineValues()
   totalValue()
@@ -57,21 +61,15 @@ function lineValues() {
   for (let i = 0; i < tables.length; i++) {
     const trs = tables[i].getElementsByTagName("tr")
 
-    for (let i = 1; i < trs.length; i++) {
-      if (trs[i].children[3].getElementsByTagName("div")[0] === undefined) {
-        break
-      }
+    for (let j = 1; j < trs.length; j++) {
+      const totalField = trs[j].getElementsByTagName("input")[2]
 
-      const totalField = trs[i].children[3]
-        .getElementsByTagName("div")[0]
-        .getElementsByTagName("input")[0]
+      const quantity = Number(trs[j].getElementsByTagName("input")[0].value)
 
-      const quantity = Number(
-        trs[i].children[0].getElementsByTagName("input")[0].value
-      )
-      let price = trs[i].children[2].getElementsByTagName("input")[0]
+      let price = trs[j].getElementsByTagName("input")[1]
+
       if (price.value.includes(",")) {
-        price.value = price.value.replace(",", "").replace(".", "")
+        price.value = price.value.replace(/[,.]+/g, "")
       }
       formatPrice(price)
 
@@ -85,45 +83,24 @@ function lineValues() {
 
 function totalValue() {
   let total = 0
-  let count = 1
 
+  const tables = document.querySelectorAll("table")
   const inputs = document.querySelectorAll(".total")
 
   for (let i = 0; i < inputs.length; i++) {
     const input = inputs[i].getElementsByTagName("input")[0]
-    const trs = document.querySelectorAll("table")[i].getElementsByTagName("tr")
+    const trs = tables[i].getElementsByTagName("tr")
 
     for (let j = 1; j < trs.length; j++) {
-      if (trs[j].children[3].getElementsByTagName("div")[0] === undefined) {
-        break
-      }
-
-      const value = Number(
-        trs[j].children[3]
-          .getElementsByTagName("div")[0]
-          .getElementsByTagName("input")[0].value
-      )
+      const value = Number(trs[j].getElementsByTagName("input")[2].value)
 
       total += value
-      count++
     }
 
     input.value = total
     formatPrice(input)
     total = 0
   }
-}
-
-function format(input) {
-  let value = input.value
-
-  value = value.replace(/[^0-9-]/g, "").replace(/(?!^)-/g, "")
-  value = Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(value)
-
-  return value
 }
 
 function formatQuant(input) {

@@ -31,7 +31,7 @@
             </thead>
             <tbody>
               {% for tv in tvs %}
-              <tr>
+              <tr id="tv-{{ tv.id }}">
                 <td>
                   <div>
                     <input
@@ -79,7 +79,7 @@
         </div>
       </section>
 
-      <article>
+      <div class="i-tables">
         <section class="section">
           <div class="section-div">
             <h3>
@@ -96,11 +96,11 @@
               </thead>
               <tbody>
                 {% for player in players %}
-                <tr>
+                <tr id="player-{{ player.id }}">
                   <td>
                     <div>
                       <input
-                        id="pl-qtd{{ player.id }}"
+                        id="player-qtd{{ player.id }}"
                         type="text"
                         value="{{ player.quantity }}"
                         onkeydown="formatQuant(this)"
@@ -117,7 +117,7 @@
                     <div>
                       R$
                       <input
-                        id="pl-price{{ player.id }}"
+                        id="player-price{{ player.id }}"
                         type="text"
                         value="{{ player.price }}"
                         onkeydown="formatPrice(this)"
@@ -163,7 +163,7 @@
             </div>
           </div>
         </section>
-      </article>
+      </div>
 
       <section class="section">
         <div class="section-div">
