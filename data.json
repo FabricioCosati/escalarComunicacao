@@ -2,7 +2,7 @@
   "tvs": [
     {
       "id": "1",
-      "quantity": "5",
+      "quantity": "8",
       "price": "50000",
       "name": "TV 32 polegadas"
     },
@@ -14,56 +14,56 @@
     },
     {
       "id": "3",
-      "quantity": "0",
-      "price": "0",
+      "quantity": "2",
+      "price": "50000",
       "name": "TV 43 polegadas"
     },
     {
       "id": "4",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "TV 49 polegadas"
     },
     {
       "id": "5",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "TV 50 polegadas"
     },
     {
       "id": "6",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "TV 55 polegadas"
     },
     {
       "id": "7",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "TV 58 polegadas"
     },
     {
       "id": "8",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "TV 65 polegadas"
     },
     {
       "id": "9",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "TV 75 polegadas"
     },
     {
       "id": "10",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "Monitor LFD (tamanho definido por projeto)"
     },
     {
       "id": "11",
-      "quantity": "0",
-      "price": "0",
+      "quantity": "5",
+      "price": "10000",
       "name": "Monitor Vídeo Wall"
     }
   ],
@@ -77,14 +77,15 @@
     {
       "id": "2",
       "quantity": "2",
-      "price": "24900",
+      "price": "25000",
       "name": "Player Alphasignage Secundário"
     },
     {
       "id": "3",
       "quantity": "0",
-      "price": "0",
+      "price": "000",
       "name": "TV Box"
     }
-  ]
+  ],
+  "labor": "35075"
 }
