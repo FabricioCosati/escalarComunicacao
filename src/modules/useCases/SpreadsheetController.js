@@ -40,16 +40,15 @@ class SpreadsheetController {
       })
     })
 
-    fs.writeFileSync(
-      "data.json",
-      JSON.stringify(dataValue, null, 2),
-      {},
-      (err) => {
-        if (err) return res.redirect("/")
+    fs.writeFile("data.json", JSON.stringify(dataValue, null, 2), {}, (err) => {
+      if (err) return res.redirect("/")
 
-        return res.redirect("/")
-      }
-    )
+      return res.render("spreadsheet/index", {
+        tvs: dataValue.tvs,
+        players: dataValue.players,
+        labor: dataValue.labor,
+      })
+    })
   }
 }
 
