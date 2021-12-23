@@ -2,19 +2,19 @@
   "tvs": [
     {
       "id": "1",
-      "quantity": "8",
+      "quantity": "5",
       "price": "50000",
       "name": "TV 32 polegadas"
     },
     {
       "id": "2",
-      "quantity": "4",
+      "quantity": "8",
       "price": "150000",
       "name": "TV 40 polegadas"
     },
     {
       "id": "3",
-      "quantity": "2",
+      "quantity": "3",
       "price": "50000",
       "name": "TV 43 polegadas"
     },
@@ -87,5 +87,5 @@
       "name": "TV Box"
     }
   ],
-  "labor": "50050"
+  "labor": "100000"
 }
