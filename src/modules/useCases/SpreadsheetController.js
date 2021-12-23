@@ -47,11 +47,7 @@ class SpreadsheetController {
       (err) => {
         if (err) return res.redirect("/")
 
-        return res.render("spreadsheet/index", {
-          tvs: dataValue.tvs,
-          players: dataValue.players,
-          labor: dataValue.labor,
-        })
+        return res.redirect("/")
       }
     )
   }
