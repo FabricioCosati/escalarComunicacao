@@ -3,6 +3,8 @@ const nunjucks = require("nunjucks")
 const routes = require("./routes")
 const methodOverride = require("method-override")
 
+const port = process.env.PORT || 5000
+
 const app = express()
 
 app.use(express.json())
@@ -19,6 +21,6 @@ nunjucks.configure("src/modules/views", {
   noCache: true,
 })
 
-app.listen(5000, () => {
+app.listen(port, () => {
   console.log("Server running on port 3000")
 })
