@@ -6,13 +6,15 @@
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
     "nodemon": "nodemon src/shared/infra/http/server.js",
-    "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'"
+    "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'",
+    "dev": "node src/shared/infra/http/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.27.7",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "method-override": "^3.0.0",
     "nodemon": "^2.0.15",
