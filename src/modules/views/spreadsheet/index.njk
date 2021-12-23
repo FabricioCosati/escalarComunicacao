@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Escalar</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Escalar</h1>
+      <h2>Comunicação & Marketing</h2>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="section-div">
+          <h3>
+            <span>Tvs</span>
+          </h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th width="130px">Quant.</th>
+                <th>Tvs</th>
+                <th width="220px">Valor unitário</th>
+                <th width="220px">Valor total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tv in tvs %}
+              <tr>
+                <td>
+                  <div>
+                    <input
+                      id="tv-qtd{{ tv.id }}"
+                      type="text"
+                      value="{{ tv.quantity }}"
+                      onkeydown="formatQuant(this)"
+                      onchange="changeValues(event)"
+                    />
+                  </div>
+                </td>
+
+                <td>
+                  <div>{{ tv.name }}</div>
+                </td>
+
+                <td>
+                  <div>
+                    R$
+                    <input
+                      id="tv-price{{ tv.id }}"
+                      type="text"
+                      value="{{ tv.price }}"
+                      onkeydown="formatPrice(this)"
+                      onchange="changeValues(event)"
+                    />
+                  </div>
+                </td>
+
+                <td>
+                  <div>
+                    R$
+                    <input type="text" disabled value="" />
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <div class="total">
+            <div>
+              <input class="total-table" id="totalTvs" type="text" disabled />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <article>
+        <section class="section">
+          <div class="section-div">
+            <h3>
+              <span>Players</span>
+            </h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th width="120px">Quant.</th>
+                  <th>Player</th>
+                  <th width="220px">Valor unitário</th>
+                  <th width="220px">Valor total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for player in players %}
+                <tr>
+                  <td>
+                    <div>
+                      <input
+                        id="pl-qtd{{ player.id }}"
+                        type="text"
+                        value="{{ player.quantity }}"
+                        onkeydown="formatQuant(this)"
+                        onchange="changeValues(event)"
+                      />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div>{{ player.name }}</div>
+                  </td>
+
+                  <td>
+                    <div>
+                      R$
+                      <input
+                        id="pl-price{{ player.id }}"
+                        type="text"
+                        value="{{ player.price }}"
+                        onkeydown="formatPrice(this)"
+                        onchange="changeValues(event)"
+                      />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div>
+                      R$
+                      <input type="text" disabled value="" />
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <div class="total">
+              <div>
+                <input class="total-table" id="totalPlayers" type="text" disabled />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-div">
+            <h3>
+              <span>Mão De Obra</span>
+            </h3>
+            <div class="table">
+              <div class="single-table">
+                R$
+                <input
+                  class="total-table"
+                  value="100000"
+                  type="text"
+                  onkeydown="formatPrice(this)"
+                  onchange="changeLabor(event)"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <section class="section">
+        <div class="section-div">
+          <h3>
+            <span>Orçamento</span>
+          </h3>
+          <div class="table">
+            <div class="totalBudget">
+                <input id="totalBudget" type="text" disabled/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

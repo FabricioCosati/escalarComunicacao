@@ -1,0 +1,205 @@
+/* GERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: min(90vw, 1200px);
+  margin: 0 auto;
+}
+
+body {
+  background-color: #ececec;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+
+header {
+  background-color: rgb(33, 89, 103);
+  padding: 2rem 0 3rem;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 4rem;
+}
+
+header h2 {
+  font-size: 1rem;
+}
+
+/* TVs/Players TABLE */
+.section {
+  margin: 3rem 0;
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.section-div h3 {
+  background: #92cddc;
+  padding: 0.5rem 2rem;
+  font-weight: normal;
+  text-align: center;
+  border: 1px solid rgb(49, 134, 155);
+  font-weight: bold;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0.2rem 0.2rem;
+  color: #333;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table thead th {
+  text-align: center;
+}
+
+table tbody td input,
+.total input {
+  background: transparent;
+  border: 0;
+}
+
+table td,
+table td input {
+  width: 100%;
+  text-align: center;
+  font-size: 1.0125rem;
+  transition: filter 0.2s;
+  font-weight: bold;
+}
+
+table td:nth-child(1):hover,
+table td:nth-child(3):hover {
+  filter: brightness(0.8);
+}
+
+table td:nth-child(3) input,
+table td:nth-child(4) input {
+  text-align: right;
+  cursor: text;
+}
+
+table td div,
+.single-table {
+  display: flex;
+  justify-content: center;
+}
+
+table td .input-container,
+table td .total-product-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+table td .input-container input {
+  text-align: right;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.2rem 0.2rem 0;
+}
+
+table th,
+table tbody td {
+  padding: 0.2rem 2rem;
+}
+
+table tbody td:nth-child(1),
+table tbody td:nth-child(3) {
+  background: rgb(146, 208, 80);
+}
+
+table th,
+table tbody td:nth-child(2),
+table tbody td:nth-child(4) {
+  background: rgb(183, 222, 232);
+  font-weight: normal;
+  text-align: left;
+}
+
+.total,
+.total input {
+  width: 100%;
+  background-color: rgb(49, 134, 155);
+  text-align: right;
+  padding: 0.2rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.total input {
+  width: 100%;
+}
+
+/* Players TABLE */
+.single-table,
+.single-table input {
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 2rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.0125rem;
+  font-weight: bold;
+  border-radius: 0.2rem;
+}
+
+.single-table {
+  background: #92d050;
+  transition: filter 0.2s;
+}
+
+.single-table:hover {
+  filter: brightness(0.8);
+}
+
+.single-table input {
+  background: transparent;
+  border: 0;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+/* Budget TABLE */
+
+.totalBudget {
+  margin-top: 0.2rem;
+  background-color: rgb(49, 134, 155);
+  padding: 0.2rem 2rem;
+  border-radius: 0.5;
+}
+
+.totalBudget input {
+  width: 100%;
+  text-align: center;
+  color: white;
+  background: transparent;
+  border: 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
