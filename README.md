@@ -20,4 +20,4 @@ Além do que foi pedido, também foi implementado a possibilidade de salvar os d
 
 ### Iniciando o projeto
 
-Para inicar o projeto, é preciso ter previamente o `Node` instalado na máquina e então executar no terminal o comando: **npm install** para que algumas depêndencias necessárias sejam instaladas na aplicação. Após isso, executar o comando **npm start** ou então **npm run dev** para iniciar o servidor e já está feito!
+Para inicar o projeto, é preciso ter previamente o `Node` instalado na máquina e então executar no terminal o comando: **npm install** para que algumas depêndencias necessárias sejam instaladas na aplicação. Após isso, executar o comando **npm start** para iniciar o servidor e já está feito!

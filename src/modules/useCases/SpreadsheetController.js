@@ -9,7 +9,7 @@ class SpreadsheetController {
       labor: data.labor,
     })
   }
-  async update(req, res) {
+  update(req, res) {
     let { tv_quantity, tv_price, player_quantity, player_price, labor } =
       req.body
 
